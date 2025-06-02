@@ -1,0 +1,86 @@
+{
+  "name": "nenad/yii2-basic-template",
+  "description": "Improved Yii 2 Basic Application Template By Nenad Zivkovic",
+  "keywords": [
+    "yii2",
+    "framework",
+    "basic",
+    "improved",
+    "application template",
+    "nenad"
+  ],
+  "type": "project",
+  "license": "BSD-3-Clause",
+  "support": {
+    "tutorial": "http://www.freetuts.org/tutorial/view?id=6",
+    "source": "https://github.com/nenad-zivkovic/yii2-basic-template"
+  },
+  "minimum-stability": "stable",
+  "require": {
+    "php": ">=5.4.0",
+    "yiisoft/yii2": "*",
+    "yiisoft/yii2-bootstrap": "*",
+    "yiisoft/yii2-swiftmailer": "*",
+    "yiisoft/yii2-jui": "*",
+    "kartik-v/yii2-password": "*",
+    "kartik-v/yii2-widget-fileinput": "*",
+    "kartik-v/yii2-widget-alert": "*",
+    "kartik-v/yii2-widget-growl": "*",
+    "kartik-v/yii2-widget-datepicker": "*",
+    "kartik-v/yii2-widget-select2": "*",
+    "kartik-v/yii2-widget-depdrop": "*",
+    "kartik-v/yii2-grid": "*",
+    "kartik-v/yii2-mpdf": "*",
+    "kartik-v/yii2-tabs-x": "*",
+    "kartik-v/yii2-datecontrol": "*",
+    "yiisoft/yii2-imagine": "*",
+    "bower-asset/admin-lte": "2.3.11",
+    "wbraganca/yii2-dynamicform": "*",
+    "bower-asset/fontawesome": "*",
+    "rmrevin/yii2-minify-view": "*",
+    "mootensai/yii2-enhanced-gii": "*",
+    "johnitvn/yii2-ajaxcrud": "*"
+  },
+  "require-dev": {
+    "yiisoft/yii2-codeception": "*",
+    "yiisoft/yii2-debug": "*",
+    "yiisoft/yii2-gii": "*",
+    "yiisoft/yii2-faker": "*",
+    "codeception/specify": "*",
+    "codeception/verify": "*"
+  },
+  "config": {
+    "vendor-dir": "_protected/vendor",
+    "process-timeout": 1800
+  },
+  "scripts": {
+    "post-create-project-cmd": [
+      "yii\\composer\\Installer::postCreateProject"
+    ]
+  },
+  "extra": {
+    "yii\\composer\\Installer::postCreateProject": {
+      "setPermission": [
+        {
+          "_protected/runtime": "0777",
+          "_protected/runtime/mail": "0777",
+          "_protected/runtime/session": "0777",
+          "_protected/yii": "0755",
+          "assets": "0777",
+          "uploads": "0777"
+        }
+      ],
+      "generateCookieValidationKey": [
+        "_protected/config/web.php"
+      ]
+    },
+    "asset-installer-paths": {
+      "npm-asset-library": "_protected/vendor/npm",
+      "bower-asset-library": "_protected/vendor/bower"
+    },
+    "asset-vcs-driver-options": {
+      "github-no-api": true
+    },
+    "asset-pattern-skip-version": "(-build)"
+  }
+}
